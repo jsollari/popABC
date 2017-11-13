@@ -1,0 +1,147 @@
+10 20 6 3 
+
+1 1 0.75
+
+m s m 
+
+2 5 0 3 0 4 0 2 0 0 1
+
+1 0 1000
+1 0 1000
+1 0 1000
+1 0 1000
+1 0 1000
+1 0 1000
+
+1 0 1000
+1 0 1000
+1 0 1000
+1 0 1000
+1 0 1000
+
+3 100 50000
+
+1 0 0.01
+1 0 0.01
+1 0 0.01
+1 0 0.01
+1 0 0.01
+1 0 0.01
+
+0
+3 1 1
+0
+0
+
+
+1 -3.18 0.05 0 0 
+1 -4.18 0.05 0 0 
+
+0 
+0
+
+0
+----------------------------------------------------------------------------------------
+PopABC - Mark Beaumont & Joao Lopes                                             01/05/09
+
+>no_iterations, generation_time, no_populations, no_loci
+
+>escalar per locus (autosome - 1; X-linked - 0.75;  Y-linked or mitDNA - 0.25)
+
+>type of DNA data (s - sequence; m - microssatelites)
+
+>topology:       2 - specify topology manually [e.g. ((Pop1,Pop2)Pop3) -> 1 2 2 3];
+                 5 - specify topology manually (and choose a Model marker).       
+
+>ne1 params:     1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+>ne2 params
+>ne3 params
+>ne4 params
+>ne(...)
+
+>neanc1 params
+>neanc2 params
+>neanc3 params
+>(...) params
+
+>t1 params:      1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+                 3 - uniform distribtuion (for all time events);
+                 4 - generalized gamma distribution (for all time events);
+                 [for 1 and 2 t(n) is added to t(n+1)]
+                 [for 3 and 4 set only one priors for all t(n)] 
+>t2 params
+>t3 params
+>(...) params
+
+>mig1 params:    0 - no migration;
+                 1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+                 3 - uniform distribtuion (on number of migrations);
+                 4 - generalized gamma distribution (on number of migrations).
+                 [for 3 and 4 real mig rate is calculated as nmig/Ne]
+>mig2 params
+>mig3 params
+>mig4 params
+>(...)
+
+>miganc1 params
+>miganc2 params
+>(...)
+
+>mutM params:    0 - zero mutation;
+                 1 - lognormal distribution: (mean of mean(log10); stdev of mean(log10);
+                 mean of Sdev(log10); stdev of stdev(log10). Stdev truncated at 0.
+                 2 - normal distribution: (mean of mean; stdev of mean; mean of Sdev;
+                 stdev of stdev. Stdev truncated at 0.
+>mutS params
+
+>recM params:    0 - zero recombination;
+                 1 - lognormal distribution: (mean of mean(log10); stdev of mean(log10);
+                 mean of Sdev(log10); stdev of stdev(log10). Stdev truncated at 0.
+                 2 - normal distribution: (mean of mean; stdev of mean; mean of Sdev;
+                 stdev of stdev. Stdev truncated at 0.
+
+>recS params                 
+
+>migweight:      0 - do not use migweights matrix;
+                 1 - use migweights matrix as following:
+                 
+                 0     mw112 mw113 mw114 mw115 ...
+                 0     mw122 mw123 mw124 mw125 ...
+                 0     mw132 mw133 mw134 mw135 ...
+                 0     mw142 mw143 mw144 mw145 ...
+                 ...   ...   ...   ...   ...   ...
+                 
+                 mw211 0     mw213 mw214 mw215 ...
+                 mw221 0     mw223 mw224 mw225 ...
+                 mw231 0     mw233 mw234 mw235 ...
+                 mw241 0     mw243 mw244 mw245 ...
+                 ...   ...   ...   ...   ...   ...
+
+                 mw311 mw312 0     mw314 mw315 ...
+                 mw321 mw322 0     mw324 mw325 ...
+                 mw331 mw332 0     mw334 mw335 ...
+                 mw341 mw342 0     mw344 mw345 ...
+                 ...   ...   ...   ...   ...   ...
+
+                 mw411 mw412 mw413 0     mw415 ...
+                 mw421 mw422 mw423 0     mw425 ...
+                 mw431 mw432 mw433 0     mw435 ...
+                 mw441 mw442 mw443 0     mw445 ...
+                 ...   ...   ...   ...   ...   ...
+                 
+                 mw511 mw512 mw513 mw514 0     ...
+                 mw521 mw522 mw523 mw524 0     ...
+                 mw531 mw532 mw533 mw534 0     ...
+                 mw541 mw542 mw543 mw544 0     ...
+                 ...   ...   ...   ...   ...   ...
+
+                 ...
+                 
+                 , where mwitj is the prob that the fraction of migrantes in pop i comes
+                 from pop j at a period of time before time event t. Sum of prob should
+                 be equal to 1.        
+                 [only use migweight if the topology is specified (option 1,2,4 or 5)]
+                 

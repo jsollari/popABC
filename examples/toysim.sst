@@ -1,0 +1,18 @@
+ Microssatelites:
+ -heterozygosity                #1
+ -variance of alleles length    #1
+ -number of alleles             #1
+ -curtosis of alleles length    #0
+ -Shanon's index                #0
+ -Nm estimator based on H       #0
+ Sequence data:
+ -mean of pairwise differences  #1
+ -number of segregating sites   #1
+ -number of haplotypes          #1
+ -Shanon's index                #0
+ -mean of MFS                   #0
+ -stdev of MFS                  #0
+ -Nm estimator based on S       #0
+ -private S                     #0
+ -S(1)                          #0
+ 

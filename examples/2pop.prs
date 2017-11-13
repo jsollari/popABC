@@ -1,0 +1,77 @@
+10 15 2 2 
+
+1.00 1.00
+
+s m
+
+0 
+
+1 0 10000
+1 0 20000
+
+1 0 15000
+
+1 0 3000000
+
+1 0 0.005
+1 0 0.005
+
+2 0.001 0.0 0.0007 0.0 
+1 -4.1 0.0 0.5 0.0 
+
+0 
+0
+----------------------------------------------------------------------------------------
+PopABC - Mark Beaumont & Joao Lopes                                             01/05/09
+
+>nr_iterations, generation_time, nr_populations, nr_loci
+
+>escalar per locus (autosome - 1; X-linked - 0.75; Y-linked or mitDNA - 0.25)
+
+>type of DNA data (s - sequence; m - microssatelites)
+
+>topology:       0 - uniform distribution;
+                 3 - uniform distribution (and choose a Model marker);
+
+>ne1 params:     1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+>ne2 params
+
+>neanc1 params
+
+>t1 params:      1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+
+>mig1 params:    0 - no migration;
+                 1 - uniform distribtuion;
+                 2 - generalized gamma distribution;
+                 3 - uniform distribtuion (on number of migrations);
+                 4 - generalized gamma distribution (on number of migrations).
+                 [for 3 and 4 real mig rate is calculated as nmig/Ne]
+>mig2 params
+
+>mutM params:    0 - zero mutation;
+                 1 - lognormal distribution: (mean of mean(log10); stdev of mean(log10);
+                 mean of Sdev(log10); stdev of stdev(log10). Stdev truncated at 0.
+                 2 - normal distribution: (mean of mean; stdev of mean; mean of Sdev;
+                 stdev of stdev. Stdev truncated at 0.
+>mutS params
+
+>recM params:    0 - zero recombination;
+                 1 - lognormal distribution: (mean of mean(log10); stdev of mean(log10);
+                 mean of Sdev(log10); stdev of stdev(log10). Stdev truncated at 0.
+                 2 - normal distribution: (mean of mean; stdev of mean; mean of Sdev;
+                 stdev of stdev. Stdev truncated at 0.
+
+>recS params
+----------------------------------------------------------------------------------------
+Tree topology:
+
+      ||       Neanc1
+      ||         |
+      ||         |
+    t1||     ---------
+      ||     |       |
+      ||     |       |
+      \/    Ne1     Ne2
+
