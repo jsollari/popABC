@@ -53,7 +53,7 @@ gethpdprob2 <- function(x,y,px,py,alpha=0.5,xlim,gxlim,maxk,...)
 #	d1 <- (x-px)^2+(y-py)^2
 #	best <- d1 == min(d1)
 #	lev <- mean(fitted(fit)[best])
-	lev <- predict.locfit(fit,list(px,py))
+	lev <- predict(fit,list(px,py))
 	slev <- sort(fitted(fit))
 	indic <- slev <= lev
 	sum(indic)/length(x)
@@ -155,7 +155,7 @@ loc1statsx <- function(x,prob,alpha=0.5,xlim,wt,numpoint=10000,...)
 	if(missing(wt))fit <- locfit(~x,alpha=alpha,xlim=xlim)
 	else fit <- locfit(~x,alpha=alpha,xlim=xlim,weight=wt)
 	xx <- seq(xlim[1],xlim[2],len=numpoint)
-	yy <- predict.locfit(fit,xx)
+	yy <- predict(fit,xx)
 	sum1 <- sum(yy)
 	x.modef <- max(yy)
 	x.mode <- xx[yy == x.modef]
@@ -204,8 +204,8 @@ gethpdprob1 <- function(x,px,alpha=0.5,xlim,wt,numpoint=10000,...)
 	if(missing(wt))fit <- locfit(~x,alpha=alpha,xlim=xlim)
 	else fit <- locfit(~x,alpha=alpha,xlim=xlim,weight=wt)
 	xx <- seq(xlim[1],xlim[2],len=numpoint)
-	yy <- predict.locfit(fit,xx)
-	lev <- predict.locfit(fit,px)
+	yy <- predict(fit,xx)
+	lev <- predict(fit,px)
 	sum1 <- sum(yy)
 
 	indic <- yy <= lev

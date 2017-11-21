@@ -97,8 +97,8 @@ nss <- length(sumstat[1,])
         }
         names(target.df) <- xvar.names
         
-        prediction1 <- predict.vglm(fit1,target.df,se.fit=T)
-        prediction2 <- predict.vglm(fit1,target.df,type="response")
+        prediction1 <- predict(fit1,target.df,se.fit=T)
+        prediction2 <- predict(fit1,target.df,type="response")
         
         l1 <- list(x1=prediction1,x2=prediction2,vals=x[wt1],wt=regwt,ss=sumstat[wt1,])
         
